@@ -9,6 +9,8 @@ RUN apt update && \
         git \
         jq \
         nano \
+        tree \
+        file \
         && \
     rm -rf /var/lib/apt/lists/*
 
