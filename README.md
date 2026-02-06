@@ -32,14 +32,22 @@ $ docker start -ai yacdm_dev_container
 
 ```
 $ go mod download
-$ go build -o yacdm .
+$ go build -o yacdm ./cmd/yacdm
+```
+
+### Run
+
+```
+$ ./yacdm --help
 ```
 
 ### Reset envionment
 
+**NOTE:** The following commands ignore the errors when the specified container or the image does not exist.
+
 ```
-$ docker stop yacdm_dev_container
-$ docker rm yacdm_dev_container
-$ docker image rm yacdm:dev
+$ docker stop yacdm_dev_container; \
+    docker rm yacdm_dev_container; \
+    docker image rm yacdm:dev
 ```
 
