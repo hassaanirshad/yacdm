@@ -18,4 +18,4 @@ COPY . ./
 
 RUN go mod download
 
-CMD ["bash"]
+CMD ["bash", "-c", "sleep infinity"]

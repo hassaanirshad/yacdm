@@ -20,13 +20,15 @@ $ popd
 
 The commands for first time setup:
 ```
-$ docker run -it --name yacdm_dev_container yacdm:dev bash
+$ docker run -d --name yacdm_dev_container yacdm:dev
 ```
 
 The commands for starting an existing development container:
 ```
-$ docker start -ai yacdm_dev_container
+$ docker start yacdm_dev_container
 ```
+
+Connect to the `yacdm_dev_container` container using VSCode.
 
 ### Build
 
@@ -46,7 +48,7 @@ $ ./yacdm --help
 **NOTE:** The following commands ignore the errors when the specified container or the image does not exist.
 
 ```
-$ docker stop yacdm_dev_container; \
+$ docker stop -t 10 yacdm_dev_container; \
     docker rm yacdm_dev_container; \
     docker image rm yacdm:dev
 ```
